@@ -1,0 +1,130 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous")
+    script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous")
+    link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css")
+    title Learn Deutsch | Home Page
+    style.
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background-color: red;
+      }
+      main {
+        flex: 1;
+      }
+      footer {
+        background-color: #ffc107;
+        color: white;
+      }
+      a {
+        text-decoration: none;
+      }
+      .spinner-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: rgba(255, 255, 255, 0.8);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 9999;
+      }
+  body
+    #spinner-container.spinner-container
+      .spinner-border(role="status")
+        span.visually-hidden Loading...
+    .container-fluid.bg-dark.p-3
+      nav.navbar.navbar-expand-lg.navbar-dark
+        .container-fluid
+          a.navbar-brand(href="#") 
+            b 
+              i= navbarTitle
+          button.navbar-toggler(type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation")
+            span.navbar-toggler-icon
+          .collapse.navbar-collapse#navbarNav
+            ul.navbar-nav.ms-auto
+              li.nav-item
+                a.nav-link.active(aria-current="page" href="#")
+                  i.bi.bi-house-door-fill
+                  |  Startseite
+              li.nav-item
+                a.nav-link(href="#") Über uns
+              li.nav-item
+                a.nav-link(href="#")
+                  i.bi.bi-journal-check
+                  |  Übungen
+    main.container.my-5
+      //- section
+        //- .row.justify-content-center
+          //- .col-md-8
+            //- h1.text-center.mb-4
+              //- b 1.
+              //- |  Hoşgeldiniz, hazırsanız başlayalım.
+            //- p.text-center#question
+            //- .input-group.input-group-sm.mb-3
+              //- input.form-control(aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Cevap")
+            //- .d-flex.justify-content-between
+              //- button.btn.btn-primary(onclick="click()") Sonraki
+              //- button.btn.btn-primary Test Et
+    footer.bg-warning.text-white
+      .container.p-4
+        .row
+          .col-lg-4.col-md-6.mb-2
+            h5.text-uppercase.mt-2.p-3 Fußzeileninhalt
+            .p-2
+              p Hier können Sie Fußzeileninhalt hinzufügen. Zum Beispiel eine kurze Information über Ihre Website oder Kontaktinformationen.
+              .btn.btn-outline-secondary.text-white.rounded-pill Mehr erfahren
+          .col-lg-4.col-md-6.mb-2
+            h5.text-uppercase.mt-2.p-3 Links
+            ul.list-unstyled
+              li
+                .btn.btn
+                  a.text-white(href="#!") Link 1
+              li
+                .btn.btn
+                  a.text-white(href="#!") Link 2
+              li
+                .btn.btn
+                  a.text-white(href="#!") Link 3
+              li
+                .btn.btn
+                  a.text-white(href="#!") Link 4
+          .col-lg-4.col-md-6.mb-3
+            h5.text-uppercase.mt-2.p-3 Kontakt
+            ul.list-unstyled
+              li
+                .mt-2.text-white
+                  a.text-white(href="#") E-Mail Adresse: info@example.com
+              li
+                .mt-2
+                  a.text-white(href="#") Telefonnummer: +123 456 7890
+              li
+                .mt-2
+                  a.text-white(href="#") Adresse: 123 Street, City, Country
+            .d-grid.gap-3.d-md-block
+              a.btn.btn-outline-secondary.mx-2.mt-2.rounded-pill(href="#")
+                i.bi.bi-twitter-x
+              a.btn.btn-outline-secondary.mx-2.mt-2.rounded-pill(href="#")
+                i.bi.bi-instagram
+              a.btn.btn-outline-secondary.mx-2.mt-2.rounded-pill(href="#")
+                i.bi.bi-facebook
+    script.
+      const words = ["der", "die", "das", "und", "sein", "haben", "ich", "du", "er", "sie", "es", "wir", "ihr", "sie", "Sie", "ein", "eine", "nicht", "ja", "nein", "bitte", "danke", "gut", "schlecht", "groß", "klein", "alt", "jung", "neu", "schön", "hässlich", "teuer", "billig", "schnell", "langsam", "heiß", "kalt", "warm", "kühl", "essen", "trinken", "gehen", "kommen", "sehen", "hören", "sprechen", "schreiben", "lesen", "lernen", "spielen", "kaufen", "verkaufen", "arbeiten", "wohnen", "schlafen", "aufstehen", "sitzen", "stehen", "liegen", "fragen", "antworten", "öffnen", "schließen", "machen", "tun", "geben", "nehmen", "bringen", "zeigen", "erklären", "finden", "suchen", "verlieren", "gewinnen", "lieben", "mögen", "hassen", "wissen", "kennen", "verstehen", "brauchen", "wollen", "müssen", "können", "dürfen", "sollen", "anfangen", "aufhören", "beginnen", "beenden", "bleiben", "fahren", "fliegen", "laufen", "schwimmen", "springen"];
+
+      function click() {
+          var y = Math.floor(Math.random() * words.length);
+          const z = words[y];
+          document.getElementById('change').textContent = "Kelimenin Anlamı Nedir?";
+          document.getElementById('question').textContent = z;
+      }
+
+      document.addEventListener('DOMContentLoaded', function() {
+          document.getElementById('spinner-container').style.display = 'none';
+      });
