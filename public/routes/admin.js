@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const homeController = require('../controller/home');
+const adminController = require('../controller/adminHome');
 
-router.get('/', homeController.getAdminHome); // Admin ana sayfası
+router.get('/', adminController.getAdminHome); // Admin ana sayfası
 
 module.exports = router;
