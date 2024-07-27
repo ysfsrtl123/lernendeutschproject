@@ -24,6 +24,9 @@ html(lang="en")
       a {
         text-decoration: none;
       }
+      .hidden {
+        display: none;
+      }
       .spinner-container {
         display: flex;
         justify-content: center;
@@ -57,22 +60,10 @@ html(lang="en")
               li.nav-item
                 a.nav-link(href="#") Über uns
               li.nav-item
-                a.nav-link(href="#")
+                a.nav-link(href="#übungen" onclick="") 
                   i.bi.bi-journal-check
                   |  Übungen
     main.container.my-5
-      //- section
-        //- .row.justify-content-center
-          //- .col-md-8
-            //- h1.text-center.mb-4
-              //- b 1.
-              //- |  Hoşgeldiniz, hazırsanız başlayalım.
-            //- p.text-center#question
-            //- .input-group.input-group-sm.mb-3
-              //- input.form-control(aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Cevap")
-            //- .d-flex.justify-content-between
-              //- button.btn.btn-primary(onclick="click()") Sonraki
-              //- button.btn.btn-primary Test Et
     footer.bg-warning.text-white
       .container.p-4
         .row
@@ -107,7 +98,7 @@ html(lang="en")
                   a.text-white(href="#") Telefonnummer: +123 456 7890
               li
                 .mt-2
-                  a.text-white(href="#") Adresse: 123 Street, City, Country
+                  a.text-white(href="#") Adresse: 123 Straße Stadt, Land
             .d-grid.gap-3.d-md-block
               a.btn.btn-outline-secondary.mx-2.mt-2.rounded-pill(href="#")
                 i.bi.bi-twitter-x
@@ -116,15 +107,10 @@ html(lang="en")
               a.btn.btn-outline-secondary.mx-2.mt-2.rounded-pill(href="#")
                 i.bi.bi-facebook
     script.
-      const words = ["der", "die", "das", "und", "sein", "haben", "ich", "du", "er", "sie", "es", "wir", "ihr", "sie", "Sie", "ein", "eine", "nicht", "ja", "nein", "bitte", "danke", "gut", "schlecht", "groß", "klein", "alt", "jung", "neu", "schön", "hässlich", "teuer", "billig", "schnell", "langsam", "heiß", "kalt", "warm", "kühl", "essen", "trinken", "gehen", "kommen", "sehen", "hören", "sprechen", "schreiben", "lesen", "lernen", "spielen", "kaufen", "verkaufen", "arbeiten", "wohnen", "schlafen", "aufstehen", "sitzen", "stehen", "liegen", "fragen", "antworten", "öffnen", "schließen", "machen", "tun", "geben", "nehmen", "bringen", "zeigen", "erklären", "finden", "suchen", "verlieren", "gewinnen", "lieben", "mögen", "hassen", "wissen", "kennen", "verstehen", "brauchen", "wollen", "müssen", "können", "dürfen", "sollen", "anfangen", "aufhören", "beginnen", "beenden", "bleiben", "fahren", "fliegen", "laufen", "schwimmen", "springen"];
-
-      function click() {
-          var y = Math.floor(Math.random() * words.length);
-          const z = words[y];
-          document.getElementById('change').textContent = "Kelimenin Anlamı Nedir?";
-          document.getElementById('question').textContent = z;
-      }
-
       document.addEventListener('DOMContentLoaded', function() {
           document.getElementById('spinner-container').style.display = 'none';
       });
+
+      function showSection(sectionId) {
+        document.getElementById(sectionId).classList.remove('hidden');
+      }

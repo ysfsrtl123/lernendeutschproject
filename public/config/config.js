@@ -1,14 +1,17 @@
-// config/config.js
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
 const app = express();
-const router = express.Router();
+
+app.set('view engine', 'pug');
+app.set('views', path.join(__dirname, '../views'));
+
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
 module.exports = {
-    express,
-    router,
-    path,
     app,
-    fs
+    path,
+    fs,
+    express
 };
